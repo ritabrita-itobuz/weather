@@ -1,0 +1,81 @@
+body {
+    background-color: rgb(20, 20, 240);
+    font-family: 'Inter', sans-serif !important;
+}
+
+.heading {
+    display:flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+}
+
+a {
+    max-width: 20%;
+}
+
+a img {
+    /* width: 70%; */
+    max-width: 30%;
+
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    margin-top: 0.3rem;
+    width:12rem;
+    height:3rem;
+}
+
+input::placeholder {
+    color: aliceblue;
+    font-size:1.4rem;
+}
+
+.user-input {
+    color: aliceblue;
+    font-size:1.4rem;
+}
+
+.main-content {
+    display:flex;
+    /* justify-content: center; */
+    margin-top: 4rem;
+}
+
+#temparature {
+    /* margin-left: 3rem; */
+}
+
+#actual-temparature {
+    font-size: 5rem;
+    color: aliceblue;
+    margin-bottom: -20%;
+    margin-left: 100%;
+}
+
+#feel-like-temparature {
+    font-size: 2rem;
+    color: aliceblue;
+    opacity:0.5;
+    margin-left: 90% ;
+}
+
+.quote {
+    /* display: none; */
+    font-size: 2rem;
+    color: aliceblue;
+    margin-left: 36%;
+}
+#weather-image img{
+    width: 20%;
+    /* background: transparent; */
+    margin-top: 20%;
+    margin-left: 100%;
+}
+@media screen and (min-width: 769px) {
+    img {
+        /* display: none; */
+    }
+}
