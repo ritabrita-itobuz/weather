@@ -1,6 +1,7 @@
 body {
     background-color: rgb(20, 20, 240);
     font-family: 'Inter', sans-serif !important;
+    overflow-x: hidden;
 }
 
 .heading {
@@ -40,20 +41,20 @@ input::placeholder {
 
 .main-content {
     display:flex;
-    /* justify-content: center; */
+    justify-content: start;
     margin-top: 4rem;
 }
 
 #temparature {
-    /* margin-left: 3rem; */
+    margin-left: 1.5rem;
 }
 
-#actual-temparature {
+/* #actual-temparature {
     font-size: 5rem;
     color: aliceblue;
     margin-bottom: -20%;
     margin-left: 100%;
-}
+} */
 
 #feel-like-temparature {
     font-size: 2rem;
@@ -74,8 +75,19 @@ input::placeholder {
     margin-top: 20%;
     margin-left: 100%;
 }
-@media screen and (min-width: 769px) {
-    img {
-        /* display: none; */
+
+@media screen and (min-width: 320px) {
+    #actual-temparature {
+        font-size:2rem ;
+        color: aliceblue;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #actual-temparature {
+        font-size: 5rem;
+        color: aliceblue;
+        margin-bottom: -20%;
+        margin-left: 100%;
     }
 }
