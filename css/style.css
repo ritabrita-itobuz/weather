@@ -11,36 +11,14 @@ body {
     margin-left: 2rem;
 }
 
-a {
-    max-width: 20%;
-}
-
-a img {
-    /* width: 70%; */
-    max-width: 30%;
-
-}
-
 input {
     background-color: transparent;
     border: none;
-    margin-top: 0.3rem;
-    width:12rem;
-    height:3rem;
-}
-
-input::placeholder {
-    color: aliceblue;
-    font-size:1.4rem;
-}
-
-.user-input {
-    color: aliceblue;
-    font-size:1.4rem;
 }
 
 .main-content {
     display:flex;
+    align-items: center;
     justify-content: start;
     margin-top: 4rem;
 }
@@ -49,45 +27,182 @@ input::placeholder {
     margin-left: 1.5rem;
 }
 
-/* #actual-temparature {
-    font-size: 5rem;
-    color: aliceblue;
-    margin-bottom: -20%;
-    margin-left: 100%;
-} */
-
-#feel-like-temparature {
-    font-size: 2rem;
-    color: aliceblue;
-    opacity:0.5;
-    margin-left: 90% ;
-}
-
 .quote {
-    /* display: none; */
-    font-size: 2rem;
     color: aliceblue;
-    margin-left: 36%;
 }
-#weather-image img{
-    width: 20%;
-    /* background: transparent; */
-    margin-top: 20%;
-    margin-left: 100%;
-}
+
 
 @media screen and (min-width: 320px) {
+    a {
+        max-width: 15%;
+        margin-left:-0%
+    }   
+    a img {    
+        max-width: 50%;
+    }
+    input {
+        margin-top: 0.5%;
+        margin-left: -4%;
+        width:10rem;
+        height:3rem;
+    }
+    input::placeholder {
+        color: rgb(87, 89, 90);
+        font-size:1.2rem;
+    }
+    .user-input {
+        color:aliceblue;
+        font-size:1.3rem;
+    }
+    #weather-image img{
+        max-width: 40%;
+        /* max-width: 100%; */
+        margin-top: 20%;
+        margin-left: 20%;
+    }
     #actual-temparature {
-        font-size:2rem ;
+        font-size:3rem ;
         color: aliceblue;
+        margin-top: 50%;
+        margin-left: -80%;
+    }
+    #feel-like-temparature {
+        font-size:1.5rem ;
+        color: aliceblue;
+        opacity: 0.5;
+        margin-top: -60%;
+        margin-left: -80%;
+    }
+    .quote {
+        font-size: 1.2rem;
+        margin-left: 5%;
+    }
+    
+}
+
+@media screen and (min-width: 375px) {
+    #actual-temparature {
+        margin-top: 70%;
+        margin-left: -100%;
+    }
+    #feel-like-temparature {
+        margin-left:-100%;
+    }
+}
+
+@media screen and (min-width: 425px) {
+    #actual-temparature {
+        font-size:4rem;
+        margin-top: 60%;
+        margin-left: -83%;
+    }
+    #feel-like-temparature {
+        margin-left: -83%;
+    }
+    .quote {
+        font-size: 1.3rem;
+        margin-left: 6%;
+    }
+}
+@media screen and (min-width: 768px) {
+    #weather-image img{
+        width: 30%;
+        max-width: 100%;
+        margin-top: 10%;
+        margin-left: 50%;
+    }
+    #actual-temparature {
+        font-size:4rem;
+        margin-top: 50%;
+        margin-left: -85%;
+    }
+    #feel-like-temparature {
+        margin-top: -50%;
+        margin-left: -85%;
+    }
+    .quote {
+        font-size: 1.4rem;
+        margin-left: 7%;
     }
 }
 
 @media screen and (min-width: 1024px) {
+    a {
+        max-width: 20%;
+    }   
+    a img {    
+        max-width: 30%;
+    }
+    input {
+        margin-top: 0.5%;
+        margin-left: -4%;
+        width:12rem;
+        height:3rem;
+    }
+    input::placeholder {
+        color: rgb(87, 89, 90);
+        font-size:1.5rem;
+    }
+    .user-input {
+        color:aliceblue;
+        font-size:1.5rem;
+    }
+    #weather-image img{
+        max-width: 30%;
+        margin-top: 10%;
+        margin-left: 60%;
+    }
     #actual-temparature {
         font-size: 5rem;
         color: aliceblue;
-        margin-bottom: -20%;
+        margin-top: 30%;
+        margin-left: -30%;
+    }
+    #feel-like-temparature {
+        font-size: 2rem;
+        color: aliceblue;
+        opacity:0.5;
+        margin-left: -30% ;
+    }
+    .quote {
+        font-size: 1.5rem;
+        margin-left: 10%;
+    }
+}
+@media screen and (min-width: 1440px) {
+    input {
+        margin-top: 0.5%;
+        margin-left: -4%;
+        width:20rem;
+        height:4rem;
+    }
+    input::placeholder {
+        color: rgb(87, 89, 90);
+        font-size:2rem;
+    }
+    .user-input {
+        color:aliceblue;
+        font-size:2rem;
+    }
+    #weather-image img{
+        max-width: 70%;
+        margin-top: 10%;
         margin-left: 100%;
+    }
+    #actual-temparature {
+        font-size: 5rem;
+        color: aliceblue;
+        margin-top: 40%;
+        margin-left: 110%;
+    }
+    #feel-like-temparature {
+        font-size: 2rem;
+        color: aliceblue;
+        opacity:0.5;
+        margin-left: 110% ;
+    }
+    .quote {
+        margin-left: 20%;
+        font-size: 3rem;
     }
 }
