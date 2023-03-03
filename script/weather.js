@@ -27,19 +27,19 @@ function getLocation() {
         document.getElementById("feel-like-temparature").innerHTML = "Feels  " + response.current.feelslike_c + "\u00B0";
         if(response.current.condition.text == "Mist")
             {
-                icon('images/mist.png');
+                icon('./images/mist.png');
             }
         if(response.current.condition.text == "Partly Cloudy")
             {
-                icon('images/partly-cloudy.png');
+                icon('./images/partly-cloudy.png');
             }
         if(response.current.condition.text == "Sunny")
             {
-                icon('images/sun.png');
+                icon('./images/sun.png');
             }
         if(response.current.condition.text == "Overcast")
             {
-                icon('images/overcast.png');
+                icon('./images/overcast.png');
             }
         
 })
