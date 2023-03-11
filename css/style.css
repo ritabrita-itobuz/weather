@@ -10,8 +10,20 @@ body {
     margin-top: 1.5rem;
     margin-left: 2rem;
 }
+.selectInput {
+    display: flex;
+    flex-direction: column;
+}
 
-input {
+/* select {
+    display: none;
+}
+
+.dropdown:hover select {
+    display:block;
+} */
+
+input, select {
     background-color: transparent;
     border: none;
 }
@@ -40,13 +52,13 @@ input {
     a img {    
         max-width: 50%;
     }
-    input {
+    input, select {
         margin-top: 0.5%;
         margin-left: -4%;
         width:10rem;
         height:3rem;
     }
-    input::placeholder {
+    input,select::placeholder {
         color: rgb(87, 89, 90);
         font-size:1.2rem;
     }
@@ -133,13 +145,13 @@ input {
     a img {    
         max-width: 30%;
     }
-    input {
+    input,select {
         margin-top: 0.5%;
         margin-left: -4%;
         width:12rem;
         height:3rem;
     }
-    input::placeholder {
+    select::placeholder {
         color: rgb(87, 89, 90);
         font-size:1.5rem;
     }
@@ -170,19 +182,19 @@ input {
     }
 }
 @media screen and (min-width: 1440px) {
-    input {
+    select {
         margin-top: 0.5%;
         margin-left: -4%;
         width:20rem;
         height:4rem;
     }
-    input::placeholder {
+    /* select::placeholder {
         color: rgb(87, 89, 90);
         font-size:2rem;
-    }
+    } */
     .user-input {
         color:aliceblue;
-        font-size:2rem;
+        font-size:1.3rem;
     }
     #weather-image img{
         max-width: 70%;
@@ -203,6 +215,6 @@ input {
     }
     .quote {
         margin-left: 20%;
-        font-size: 3rem;
+        font-size: 2rem;
     }
 }

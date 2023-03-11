@@ -8,15 +8,46 @@
     <link rel="stylesheet" href="./css/style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+        .dropdown {
+			display: flex;
+			flex-direction: column;
+            padding-bottom: 1px;
+		}
+        select {
+            /* appearance: none; */
+        }
+		#checking {
+			background-color: rgb(239, 239, 179);
+		}
     </style>
-</head>
+
+    <script>
+        function selectedLocation() 
+        {
+            var mylist = document.getElementById("myList");
+            document.getElementById("selectedValue").value = mylist.options[mylist.selectedIndex].text;
+        }
+    </script>
+</head> 
 <body>
     <section class="">
         <div class="heading">
             <a href="#" target="_blank">
                 <img src="./images/upload.svg" alt="UPLOAD">
             </a>
-            <input type="text" placeholder="Enter any location" class="user-input">
+            <div class="dropdown">
+                <input type="text" placeholder="Enter any location" class="user-input" id="input">
+                <select name="" id="checking" class="" onchange="selectedLocation()" >
+                    <option value="" id="selected">Kolkata</option>
+                    <option value="" id="selected">Delhi</option>
+                    <option value="" id="selected">Bangalore</option>
+                </select>
+                <!-- <ul name="" id="checking" class="" onchange="selectedLocation()" >
+                    <li value="">Kolkata</li>
+                    <li value="">Delhi</li>
+                    <li value="">Bangalore</li>
+                </ul> -->
+            </div>
             <a href="#" target="_blank">
                 <img src="./images/menu.svg" alt="MENU">
             </a>    
@@ -34,4 +65,25 @@
     </section>
     <script src="./script/weather.js"></script>
 </body>
+<script>
+	document.getElementById("checking").style.display= "none";
+	document.getElementById("input").addEventListener("click",inputTaking);
+	function inputTaking() {
+		var list = document.getElementById("checking");
+		if (list.style.display === "none") {
+				list.style.display = "block";
+			} 
+		else {
+				list.style.display = "none";
+			}
+	}
+	function selectedLocation() {
+		var option = document.getElementById("checking");
+		document.getElementById("input").value = option.options[option.selectedIndex].text;
+	}
+    // document.getElementById("checking").addEventListener("click",hideDropdown);
+    // function hideDropdown() {
+    //     // document.getElementById("selected").style.display= "none";
+    // }
+</script>
 </html>
