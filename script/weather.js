@@ -37,7 +37,7 @@ function getLocation() {
             {
                 icon('./images/sun.png');
             }
-        if(response.current.condition.text == "Overcast")3
+        if(response.current.condition.text == "Overcast")
             {
                 icon('./images/overcast.png');
             }

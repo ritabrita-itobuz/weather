@@ -16,18 +16,14 @@
         select {
             /* appearance: none; */
         }
+        .wrapper {
+            width:200px;
+            height: 150px;
+        }
 		#checking {
 			background-color: rgb(239, 239, 179);
 		}
     </style>
-
-    <script>
-        function selectedLocation() 
-        {
-            var mylist = document.getElementById("myList");
-            document.getElementById("selectedValue").value = mylist.options[mylist.selectedIndex].text;
-        }
-    </script>
 </head> 
 <body>
     <section class="">
@@ -37,11 +33,16 @@
             </a>
             <div class="dropdown">
                 <input type="text" placeholder="Enter any location" class="user-input" id="input">
-                <select name="" id="checking" class="" onchange="selectedLocation()" >
-                    <option value="" id="selected">Kolkata</option>
-                    <option value="" id="selected">Delhi</option>
-                    <option value="" id="selected">Bangalore</option>
-                </select>
+                <div class="wrapper">
+                    <select name="" id="checking" class="" onfocus='this.size=4;' onblur='this.size=1;' onchange='this.size=1; this.blur(); selectedLocation()' >
+                        <option value="" id="selected">Kolkata</option>
+                        <option value="" id="selected">Delhi</option>
+                        <option value="" id="selected">Bangalore</option>
+                        <option value="" id="selected">Mexico</option>
+                        <option value="" id="selected">London</option>
+                        <option value="" id="selected">Bombay</option>
+                    </select>
+                </div>
                 <!-- <ul name="" id="checking" class="" onchange="selectedLocation()" >
                     <li value="">Kolkata</li>
                     <li value="">Delhi</li>
@@ -81,9 +82,9 @@
 		var option = document.getElementById("checking");
 		document.getElementById("input").value = option.options[option.selectedIndex].text;
 	}
-    // document.getElementById("checking").addEventListener("click",hideDropdown);
-    // function hideDropdown() {
-    //     // document.getElementById("selected").style.display= "none";
-    // }
+    document.getElementById("checking").addEventListener("click",hideDropdown);
+    function hideDropdown() {
+        document.getElementById("checking").style.display= "none";
+    }
 </script>
 </html>
