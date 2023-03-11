@@ -37,6 +37,10 @@ function getLocation() {
             {
                 icon('./images/sun.png');
             }
+        if(response.current.condition.text == "Clear")
+            {
+                icon('./images/sun.png');
+            }
         if(response.current.condition.text == "Overcast")
             {
                 icon('./images/overcast.png');
@@ -52,5 +56,24 @@ document.addEventListener('keyup',(e)=>{
     }
 })
 
+document.getElementById("checking").style.display= "none";
+document.getElementById("input").addEventListener("click",inputTaking);
+	function inputTaking() {
+		var list = document.getElementById("checking");
+		if (list.style.display === "none") {
+				list.style.display = "block";
+			} 
+		else {
+				list.style.display = "none";
+			}
+	}
+	function selectedLocation() {
+		var option = document.getElementById("checking");
+		document.getElementById("input").value = option.options[option.selectedIndex].text;
+	}
+document.getElementById("checking").addEventListener("click",hideDropdown);
+    function hideDropdown() {
+        document.getElementById("checking").style.display= "none";
+    }
 
 
