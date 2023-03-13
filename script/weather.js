@@ -29,7 +29,7 @@ function getLocation() {
             {
                 icon('./images/mist.png');
             }
-        if(response.current.condition.text == "Partly Cloudy")
+        if(response.current.condition.text == "Partly cloudy")
             {
                 icon('./images/partly-cloudy.png');
             }
@@ -71,6 +71,7 @@ document.getElementById("input").addEventListener("click",inputTaking);
 		var option = document.getElementById("checking");
 		document.getElementById("input").value = option.options[option.selectedIndex].text;
 	}
+document.getElementById("checking").addEventListener("click",getLocation);
 document.getElementById("checking").addEventListener("click",hideDropdown);
     function hideDropdown() {
         document.getElementById("checking").style.display= "none";
