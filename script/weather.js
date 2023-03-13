@@ -45,13 +45,17 @@ function getLocation() {
             {
                 icon('./images/overcast.png');
             }
-        
+        if(response.current.condition.text == "Light snow")
+            {
+                icon('./images/snowman.png');
+            }
 })
 }
 
 document.addEventListener('keyup',(e)=>{
     if(e.key==='Enter'){
         console.log(e);
+        hideDropdown();
         getLocation();
     }
 })
@@ -76,5 +80,9 @@ document.getElementById("checking").addEventListener("click",hideDropdown);
     function hideDropdown() {
         document.getElementById("checking").style.display= "none";
     }
-
+// document.addEventListener('keyup',(e)=>{
+//         if(e.target==='input'){
+//             hideDropdown();
+//         }
+//     })
 
