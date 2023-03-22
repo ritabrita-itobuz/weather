@@ -14,14 +14,6 @@ body {
     display: flex;
     flex-direction: column;
 }
-
-/* select {
-    display: none;
-}
-
-.dropdown:hover select {
-    display:block;
-} */
 .dropdown {
     display: flex;
     flex-direction: column;
@@ -62,7 +54,7 @@ input, select {
         margin-left:-0%
     }   
     a img {    
-        max-width: 50%;
+        max-width: 100%;
     }
     input, select {
         margin-top: 0.5%;

@@ -80,9 +80,5 @@ document.getElementById("checking").addEventListener("click",hideDropdown);
     function hideDropdown() {
         document.getElementById("checking").style.display= "none";
     }
-// document.addEventListener('keyup',(e)=>{
-//         if(e.target==='input'){
-//             hideDropdown();
-//         }
-//     })
+
 
