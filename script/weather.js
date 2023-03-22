@@ -1,7 +1,7 @@
 
-var api = "";
+let api = "";
 
-var data = async function () {
+let data = async function () {
     const response = await fetch(api);
     return await response.json();    
 }
@@ -63,7 +63,7 @@ document.addEventListener('keyup',(e)=>{
 document.getElementById("checking").style.display= "none";
 document.getElementById("input").addEventListener("click",inputTaking);
 	function inputTaking() {
-		var list = document.getElementById("checking");
+		let list = document.getElementById("checking");
 		if (list.style.display === "none") {
 				list.style.display = "block";
 			} 
