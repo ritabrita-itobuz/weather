@@ -1,11 +1,11 @@
-
 let api = "";
 
 let data = async function () {
     const response = await fetch(api);
     return await response.json();    
 }
-let icon = (image) => {
+
+const icon = (image) => {
     let weathericon = document.getElementById("weather-image");
     while (weathericon.firstChild){
         weathericon.removeChild(weathericon.firstChild);
@@ -14,71 +14,72 @@ let icon = (image) => {
     element.setAttribute("src", image);
     element.setAttribute("alt","Weather");
     document.getElementById("weather-image").appendChild(element);
-
 }
-function getLocation() {
-    let val = document.querySelector('input').value;
-    api = "http://api.weatherapi.com/v1/current.json?key=0c80b2b56f1943ada19100744230103&q=" + val + "&aqi=no";
+
+const clickTextBox = () => {
+    document.getElementById("listOfItems").classList.toggle("listVisible");
+}
+ 
+const displayOnTextBox = () => {
+    let item = document.querySelectorAll("#listOfItems li");
+    for(let i = 0;i < item.length ; i++){
+        item[i].onclick = function(){
+            document.getElementById("input").value = this.innerText;
+            getLocation();
+            document.getElementById("listOfItems").classList.toggle("listVisible");
+        }
+    }
+}
+
+displayOnTextBox();
+
+document.addEventListener('keyup',(e)=>{
+    if(e.key === 'Enter'){
+        console.log(e);
+        getLocation();
+        if(document.getElementById("listOfItems").classList.contains("listVisible")) {
+            document.getElementById("listOfItems").classList.remove("listVisible");
+        }
+        else {
+            document.getElementById("listOfItems").classList.add("listVisible");
+        }
+    }
+})
+
+const getLocation = () => {
+    let input = document.querySelector('input').value;
+    console.log(input);
+    api = "http://localhost:3000";
     console.log(api);
     data()
-    .then((response)=>{
+    .then((response) => {
         console.log(response);
-        document.getElementById("actual-temparature").innerHTML = response.current.temp_c + "\u00B0";
-        document.getElementById("feel-like-temparature").innerHTML = "Feels  " + response.current.feelslike_c + "\u00B0";
-        if(response.current.condition.text == "Mist")
+        const area = response.find((info) => info.location === input);
+        document.getElementById("actual-temparature").innerHTML = area.tempC + "\u00B0";
+        document.getElementById("feel-like-temparature").innerHTML = "Feels  " + area.condition.feelsLikeC + "\u00B0";
+        if(area.condition.text == "Mist")
             {
                 icon('./images/mist.png');
             }
-        if(response.current.condition.text == "Partly cloudy")
+        if(area.condition.text === "Partly cloudy")
             {
                 icon('./images/partly-cloudy.png');
             }
-        if(response.current.condition.text == "Sunny")
+        if(area.condition.text === "Sunny")
             {
                 icon('./images/sun.png');
             }
-        if(response.current.condition.text == "Clear")
+        if(area.condition.text === "Clear")
             {
                 icon('./images/sun.png');
             }
-        if(response.current.condition.text == "Overcast")
+        if(area.condition.text === "Overcast")
             {
                 icon('./images/overcast.png');
             }
-        if(response.current.condition.text == "Light snow")
+        if(area.condition.text === "Light snow")
             {
                 icon('./images/snowman.png');
             }
 })
 }
-
-document.addEventListener('keyup',(e)=>{
-    if(e.key==='Enter'){
-        console.log(e);
-        hideDropdown();
-        getLocation();
-    }
-})
-
-document.getElementById("checking").style.display= "none";
-document.getElementById("input").addEventListener("click",inputTaking);
-	function inputTaking() {
-		let list = document.getElementById("checking");
-		if (list.style.display === "none") {
-				list.style.display = "block";
-			} 
-		else {
-				list.style.display = "none";
-			}
-	}
-	function selectedLocation() {
-		var option = document.getElementById("checking");
-		document.getElementById("input").value = option.options[option.selectedIndex].text;
-	}
-document.getElementById("checking").addEventListener("click",getLocation);
-document.getElementById("checking").addEventListener("click",hideDropdown);
-    function hideDropdown() {
-        document.getElementById("checking").style.display= "none";
-    }
-
-

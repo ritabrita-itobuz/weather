@@ -17,16 +17,16 @@
                 <img src="./images/upload.svg" alt="UPLOAD">
             </a>
             <div class="dropdown">
-                <input type="text" placeholder="Enter any location" class="user-input" id="input">
+                <input type="text" placeholder="Enter any location" class="user-input" id="input" onclick="clickTextBox()">
                 <div class="wrapper">
-                    <select name="" id="checking" class="" onfocus='this.size=4;' onchange='this.size=1; this.blur(); selectedLocation()'>
-                        <option value="" id="selected">Kolkata</option>
-                        <option value="" id="selected">Delhi</option>
-                        <option value="" id="selected">Bangalore</option>
-                        <option value="" id="selected">Mexico</option>
-                        <option value="" id="selected">London</option>
-                        <option value="" id="selected">Bombay</option>
-                    </select>
+                    <ul id="listOfItems">
+                        <li>Kolkata</li>
+                        <li>London</li>
+                        <li>Paris</li>
+                        <li>Mexico</li>
+                        <li>New York</li>
+                        <li>keshtopur</li>
+                    </ul>
                 </div>
             </div>
             <a href="#" target="_blank">
@@ -41,8 +41,8 @@
                 <p id="feel-like-temparature" class="content"></p>
             </div>
         </div>
+        
         <p class="quote">Make the most of this nice weather that I generated for you. Or else.</p>
-
     </section>
     <script src="./script/weather.js"></script>
 </body>
