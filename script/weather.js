@@ -35,7 +35,6 @@ displayOnTextBox();
 
 document.addEventListener('keyup',(e)=>{
     if(e.key === 'Enter'){
-        console.log(e);
         getLocation();
         if(document.getElementById("listOfItems").classList.contains("listVisible")) {
             document.getElementById("listOfItems").classList.remove("listVisible");
@@ -48,13 +47,11 @@ document.addEventListener('keyup',(e)=>{
 
 const getLocation = () => {
     let input = document.querySelector('input').value;
-    console.log(input);
     api = "http://localhost:3000";
-    console.log(api);
     data()
     .then((response) => {
-        console.log(response);
         const area = response.find((info) => info.location === input);
+        console.log(area.location);
         document.getElementById("actual-temparature").innerHTML = area.tempC + "\u00B0";
         document.getElementById("feel-like-temparature").innerHTML = "Feels  " + area.condition.feelsLikeC + "\u00B0";
         if(area.condition.text == "Mist")
